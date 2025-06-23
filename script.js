@@ -18,13 +18,14 @@ const projectData = [
     title: 'KB Pay Mobile App Re-design',
     duration: '2025.05',
     role: '개인 프로젝트',
-    desc: '모든 연령층이 쉽게 사용할 수 있도록 코레일톡 앱의 복잡한 예매 경험을 개선한 UX/UI 리디자인 프로젝트입니다.',
+    desc: 'KB Pay 앱의 불편한 사용 흐름과 주요 기능 접근성 문제를 해결하여, 사용자 중심의 직관적이고 모던한 인터페이스로 새롭게 개선한 프로젝트입니다.',
     links: [
       {
         type: 'figma',
         url: 'https://www.figma.com/design/SMrOjbM9FQgB4woZ4QzjHd/KB-Pay-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8-%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=0-1&t=CinN35OfawlyMpqm-1',
       },
       { type: 'googleDrive', url: 'https://drive.google.com/korail' },
+      { type: 'notion', url: 'https://www.notion.so/moonjiwon/KB-Pay-21b6c9f6b56680a0adcad1a59fbdb1d1?source=copy_link' },
     ],
   },
   {
@@ -62,6 +63,8 @@ buttons.forEach((btn, index) => {
           icon = '<i class="fa-brands fa-figma"></i>';
         } else if (item.type === 'googleDrive') {
           icon = '<i class="fa-brands fa-google-drive"></i>';
+        } else if (item.type === 'notion') {
+          icon = '<i class="fa-solid fa-link"></i>';
         }
 
         return `<span><a href="${item.url}" target="_blank">${icon}</a></span>`;
