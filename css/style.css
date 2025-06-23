@@ -1,6 +1,6 @@
 :root {
-  --font-eng: 'JetBrains Mono', sans-serif;
-  --font-kor: 'Pretendard', sans-serif;
+  --font-eng: 'NanumGothicCoding', sans-serif;
+  --font-kor: 'NanumGothicCodingBold', sans-serif;
 
   --gray-900: #2e2f2c;
   --gray-200: #e5e6e3;
@@ -20,7 +20,6 @@ html {
 
 body {
   font-family: var(--font-kor);
-  font-weight: 500;
   line-height: 1.5;
   color: var(--gray-900);
   background-color: var(--gray-200);
@@ -40,27 +39,37 @@ img {
   white-space: nowrap;
 }
 
+nav {
+  height: 100%;
+}
+
 #header {
   position: fixed;
   top: 50%;
   left: 20px;
   z-index: 100;
+  height: 100%;
   font-family: var(--font-eng);
   transform: translateY(-50%);
 }
 
 #header ul {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
+  height: 100%;
   gap: 100px;
 }
 
 #header ul li {
   font-size: 20px;
-  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   transform: rotate(90deg);
+}
+
+#header ul li:hover {
+  opacity: 0.7;
 }
 
 main {
@@ -77,10 +86,32 @@ section {
 h1 {
   font-family: var(--font-eng);
   font-size: 28px;
-  font-weight: 700;
   line-height: 1.25;
   text-transform: lowercase;
   word-spacing: 1px;
+}
+
+.home-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.desc {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 3rem;
+
+  span {
+    width: 290px;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
 }
 
 .projects__header {
@@ -93,7 +124,6 @@ h1 {
   display: flex;
   font-family: var(--font-eng);
   font-size: 24px;
-  font-weight: 700;
   gap: 32px;
 }
 
@@ -110,8 +140,12 @@ h1 {
   background-color: var(--gray-900);
 }
 
+.project__menu ul li:hover:not(.active) {
+  opacity: 0.7;
+}
+
 .project__container {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .project__item {
@@ -120,13 +154,49 @@ h1 {
 }
 
 .project__image {
-  background-color: #fff;
   flex: 6;
+  img {
+    width: 100%;
+  }
 }
 
 .project__content {
-  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   flex: 4;
+}
+
+.project__info > * {
+  padding-bottom: 16px;
+}
+
+.project__title {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.project__duration,
+.project__role,
+.project__desc {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.project__link span {
+  margin-right: 8px;
+}
+
+.project__link span:hover {
+  opacity: 0.7;
+}
+
+.project__link i {
+  font-size: 2rem;
+}
+
+.project__link-desc {
+  font-size: 12px;
 }
 
 footer {
@@ -144,4 +214,66 @@ footer {
 ::selection {
   color: var(--gray-200);
   background-color: var(--gray-900);
+}
+
+.black {
+  --gray-900: #e5e6e3;
+  --gray-200: #2e2f2c;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  padding-bottom: 24px;
+  div {
+    height: 50vh;
+    border: 4px solid var(--gray-900);
+    flex: 1 1;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    a img {
+      width: 40%;
+    }
+    /* i {
+      font-size: 10rem;
+    } */
+  }
+
+  div:hover {
+    position: relative;
+    background-color: rgba(229, 230, 227, 0.3);
+  }
+
+  .links__email:hover:before {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    transform: translateX(-50%);
+    content: 'send email';
+  }
+
+  .links__download:hover:before {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    transform: translateX(-50%);
+    content: 'download resume';
+  }
 }
