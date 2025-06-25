@@ -10,7 +10,7 @@ const projectData = [
         type: 'figma',
         url: 'https://www.figma.com/design/v3PY9Mx7L6RzkZXizwaLq2/%EC%BD%94%EB%A0%88%EC%9D%BC%ED%86%A1-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--%EC%A0%9C%EC%B6%9C%EC%9A%A9-?m=auto&t=h3HbUI7ZpzjV6EXL-1',
       },
-      { type: 'googleDrive', url: 'https://drive.google.com/korail' },
+      { type: 'googleDrive', url: 'https://drive.google.com/file/d/13J5p5ln_Wcp0kq_5JYuO82PXnwYEiyxZ/view?usp=share_link' },
     ],
   },
   {
@@ -24,7 +24,7 @@ const projectData = [
         type: 'figma',
         url: 'https://www.figma.com/design/SMrOjbM9FQgB4woZ4QzjHd/KB-Pay-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8-%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=0-1&t=CinN35OfawlyMpqm-1',
       },
-      { type: 'googleDrive', url: 'https://drive.google.com/korail' },
+      { type: 'googleDrive', url: 'https://drive.google.com/file/d/1n2i_DVfyO-em56_ha0minIJuBkJ2_0Es/view?usp=share_link' },
       { type: 'notion', url: 'https://www.notion.so/moonjiwon/KB-Pay-21b6c9f6b56680a0adcad1a59fbdb1d1?source=copy_link' },
     ],
   },
@@ -39,6 +39,7 @@ const projectData = [
         type: 'figma',
         url: 'https://www.figma.com/design/LH7TrhLCmZMzfxIp8gerWA/%EC%8B%9C%EB%84%A4%EB%B0%94%EC%9D%B4%ED%8A%B8--latest-?node-id=0-1&t=3EILj3BM38ngMJmg-1',
       },
+      { type: 'website', url: 'https://minoh2.github.io/cinebite/' },
     ],
   },
 ];
@@ -63,7 +64,7 @@ buttons.forEach((btn, index) => {
           icon = '<i class="fa-brands fa-figma"></i>';
         } else if (item.type === 'googleDrive') {
           icon = '<i class="fa-brands fa-google-drive"></i>';
-        } else if (item.type === 'notion') {
+        } else if (item.type === 'notion' || 'website') {
           icon = '<i class="fa-solid fa-link"></i>';
         }
 
