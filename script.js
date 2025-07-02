@@ -10,8 +10,9 @@ const projectData = [
         type: 'figma',
         url: 'https://www.figma.com/design/v3PY9Mx7L6RzkZXizwaLq2/%EC%BD%94%EB%A0%88%EC%9D%BC%ED%86%A1-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--%EC%A0%9C%EC%B6%9C%EC%9A%A9-?m=auto&t=h3HbUI7ZpzjV6EXL-1',
       },
-      { type: 'googleDrive', url: 'https://drive.google.com/file/d/13J5p5ln_Wcp0kq_5JYuO82PXnwYEiyxZ/view?usp=share_link' },
+      { type: 'pdf', url: 'documents/korail-talk.pdf' },
     ],
+    thumbnailLink: 'https://drive.google.com/file/d/13J5p5ln_Wcp0kq_5JYuO82PXnwYEiyxZ/view?usp=share_link',
   },
   {
     img: './images/kbpay-thumbnail.png',
@@ -24,28 +25,31 @@ const projectData = [
         type: 'figma',
         url: 'https://www.figma.com/design/SMrOjbM9FQgB4woZ4QzjHd/KB-Pay-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8-%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=0-1&t=CinN35OfawlyMpqm-1',
       },
-      { type: 'googleDrive', url: 'https://drive.google.com/file/d/1n2i_DVfyO-em56_ha0minIJuBkJ2_0Es/view?usp=share_link' },
-      { type: 'notion', url: 'https://www.notion.so/moonjiwon/KB-Pay-21b6c9f6b56680a0adcad1a59fbdb1d1?source=copy_link' },
+      { type: 'pdf', url: 'documents/kbpay.pdf' },
     ],
+    thumbnailLink: 'https://drive.google.com/file/d/1n2i_DVfyO-em56_ha0minIJuBkJ2_0Es/view?usp=share_link',
   },
   {
     img: './images/cinebite-thumbnail.png',
     title: 'Cinebite',
-    duration: '2025.06-',
-    role: '팀 프로젝트 (진행 중)',
+    duration: '2025.06',
+    role: '팀 프로젝트',
     desc: '짧은 러닝타임 기반 영화 큐레이션 웹사이트 입니다. 사용자가 원하는 영화 길이를 슬라이더로 설정하면, 그에 맞는 영화를 추천해주는 웹서비스입니다. 간결한 UI와 테마별 큐레이션으로 빠르게 영화 탐색이 가능합니다.',
     links: [
       {
         type: 'figma',
         url: 'https://www.figma.com/design/LH7TrhLCmZMzfxIp8gerWA/%EC%8B%9C%EB%84%A4%EB%B0%94%EC%9D%B4%ED%8A%B8--latest-?node-id=0-1&t=3EILj3BM38ngMJmg-1',
       },
+      { type: 'pdf', url: 'documents/cinebite.pdf' },
       { type: 'website', url: 'https://minoh2.github.io/cinebite/' },
     ],
+    thumbnailLink: 'https://minoh2.github.io/cinebite/',
   },
 ];
 
 const buttons = document.querySelectorAll('.project__menu button');
 const img = document.querySelector('.project__image img');
+const thumbnailLink = document.querySelector('.project__image a');
 const title = document.querySelector('.project__title');
 const duration = document.querySelector('.project__duration');
 const role = document.querySelector('.project__role');
@@ -62,9 +66,9 @@ buttons.forEach((btn, index) => {
 
         if (item.type === 'figma') {
           icon = '<i class="fa-brands fa-figma"></i>';
-        } else if (item.type === 'googleDrive') {
-          icon = '<i class="fa-brands fa-google-drive"></i>';
-        } else if (item.type === 'notion' || 'website') {
+        } else if (item.type === 'pdf') {
+          icon = '<i class="fa-solid fa-file-pdf"></i>';
+        } else if (item.type === 'website') {
           icon = '<i class="fa-solid fa-link"></i>';
         }
 
@@ -78,6 +82,7 @@ buttons.forEach((btn, index) => {
     role.textContent = data.role;
     desc.textContent = data.desc;
     link.innerHTML = linkHtml;
+    thumbnailLink.href = data.thumbnailLink;
 
     document.querySelectorAll('.project__menu li').forEach((li) => li.classList.remove('active'));
     btn.parentElement.classList.add('active');
@@ -94,7 +99,7 @@ buttons.forEach((btn, index) => {
 
       if (item.type === 'figma') {
         icon = '<i class="fa-brands fa-figma"></i>';
-      } else if (item.type === 'googleDrive') {
+      } else if (item.type === 'pdf') {
         icon = '<i class="fa-brands fa-google-drive"></i>';
       }
 
@@ -108,6 +113,7 @@ buttons.forEach((btn, index) => {
   role.textContent = data.role;
   desc.textContent = data.desc;
   link.innerHTML = linkHtml;
+  thumbnailLink.href = data.thumbnailLink;
 })();
 
 const body = document.querySelector('body');
